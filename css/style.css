@@ -1,0 +1,914 @@
+@charset "UTF-8";
+/* ベースのスタイル
+------------------------------------------ */
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.75;
+  color: #333;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+@media (min-width: 768px) {
+  img:hover {
+    transform: scale(1.2);
+  }
+}
+ul {
+  list-style: none;
+}
+.button {
+  display: block;
+  border-radius: 3.125rem;
+}
+.button:hover {
+  opacity: 0.6;
+}
+.container {
+  padding: 3.25rem 1rem 4rem;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: calc(75rem - 2.5rem);
+    margin: 0 auto;
+
+  }
+}
+/* ヘッダー
+------------------------------------------ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.375rem;
+  padding: 1.0625rem;
+  background-color: #fff;
+  box-shadow: 0px 0.3125rem 0.3125rem 0px rgba(0, 2, 8, 10%);
+}
+@media (min-width: 768px) {
+  .header {
+    justify-content: center;
+    height: 6.25rem;
+  }
+}
+
+/* ロゴ */
+.header-logo {
+  color: #005bac;
+  font-family: poppins;
+  font-size: 1.375rem;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .header-logo {
+    font-size: 0.9375rem;
+    margin-right: 3.125rem;
+  }
+}
+@media (min-width: 1081px) {
+  .header-logo {
+    font-size: 2rem;
+    margin-right: 10rem;
+  }
+}
+/* ハンバーガーボタン */
+.hamburger-button {
+  position: fixed;
+  right: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #0271e0;
+  width: 4.375rem;
+  height: 4.375rem;
+}
+.hamburger-button i {
+  font-size: 2.5rem;
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .hamburger-button {
+    display: none;
+  }
+}
+/* ハンバーガーメニュー
+------------------------------------------ */
+@media (max-width: 767.9px) {
+  .hamburger-menu {
+    position: fixed;
+    top: 4.375rem;
+    left: 100%;
+    width: 100%;
+    padding: 1.25rem 1.25rem 2rem 1.25rem;
+    background-color: #005bac;
+    transition: all 0.6s;
+    visibility: hidden;
+  }
+}
+/* 開いている状態 */
+.hamburger-menu-active {
+  left: 0;
+  visibility: visible;
+}
+/* ハンバーガーメニュー（中身） */
+.hamburger-nav-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.2rem;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+@media (min-width: 768px) {
+  .hamburger-nav-list {
+    flex-direction: row;
+    column-gap: 3rem;
+    align-items: center;
+    font-size: 1.25rem;
+    padding-right: 0.3125rem;
+  }
+}
+@media (min-width: 768px) {
+  .hamburger-nav-list {
+    flex-direction: row;
+    column-gap: 3rem;
+    align-items: center;
+    font-size: 1.25rem;
+    padding-right: 0.3125rem;
+  }
+}
+/* ヘッダーナビコンテナ */
+@media (min-width: 768px) {
+  .header-nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+/* ボタン */
+.button-blue {
+  max-width: 20.9375rem;
+  padding: 1.25rem 4.6875rem 1.25rem 4.6875rem;
+  background-color: #fff;
+  color: #005bac;
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .button-blue {
+    max-width: 12.5rem;
+    padding: 1.25rem 2.5rem 1.25rem 2.5rem;
+    font-size: 0.625rem;
+    background: linear-gradient(90deg, #0271e0, #53a2f0);
+    color: #fff;
+  }
+}
+@media (min-width: 1081px) {
+  .button-blue {
+    max-width: 17.625rem;
+    padding: 1.25rem 2.5rem 1.25rem 2.5rem;
+    font-size: 1.25rem;
+    background: linear-gradient(90deg, #0271e0, #53a2f0);
+    color: #fff;
+  }
+}
+.hamburger-nav-item {
+  display: flex;
+  border-bottom: 1px solid #fff;
+  border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.5);
+}
+@media (min-width: 768px) {
+  .hamburger-nav-item {
+  display: flex;
+  border-bottom: none;
+  }
+}
+.hamburger-nav-item li {
+  margin-bottom: 1.25rem;
+}
+.hamburger-nav-item a {
+  color: #fff;
+}
+.hamburger-nav-item i {
+  color: #fff;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .hamburger-nav-item li {
+    margin-bottom: 0;
+  }
+  .hamburger-nav-item a {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #333;
+  }
+}
+
+@media (min-width: 1195px) {
+  .hamburger-nav-item li {
+    margin-bottom: 0;
+  }
+  .hamburger-nav-item a {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+  }
+}
+@media (min-width: 768px) {
+  .nav-list-icon {
+    display: none;
+  }
+}
+
+/* top画面 */
+.top {
+  background-image: url("../images/top/mainVIsual_sp.jpg.jpg");
+  background-size: cover;
+  background-position: -0.9375rem center;
+  height: 15.625rem;
+  margin-top: 4.375rem;
+}
+@media (min-width: 48rem) {
+  .top {
+    background-image: url("../images/top/mainVIsual_pc.jpg.jpg");
+    background-position: 0rem center;
+    height: 40.625rem;
+    margin-top: 6.5rem;
+  }
+}
+
+.frame {
+  display: flex;
+  padding-top: 2.1875rem;
+  padding-bottom: 1.25rem;
+}
+@media (min-width: 768px) {
+  .frame {
+    padding-top: 6.5rem;
+    padding-bottom: 1.5625rem;
+  }
+}
+.frame-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  line-height: 1;
+}
+@media (min-width: 768px) {
+  .frame-item {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    line-height: 0;
+  }
+}
+.frame-left img {
+  width: 1.4375rem;
+}
+@media (min-width: 768px) {
+  .frame-left img {
+    width: 3.3125rem;
+  }
+}
+.frame-right img {
+  width: 1.4375rem;
+}
+@media (min-width: 768px) {
+  .frame-right img {
+    width: 3.3125rem;
+  }
+}
+.top .container {
+  padding: 0rem 1rem 0rem 1rem;
+}
+@media (min-width: 768px) {
+  .top .container {
+    padding: 0rem 1rem 0rem 1.875rem;
+  }
+}
+.frame-item-text {
+  font-size: 0.6875rem;
+  padding-bottom: 0.625rem;
+}
+
+@media (min-width: 768px) {
+  .frame-item-text {
+    font-size: 1.25rem;
+    padding-bottom: 2rem;
+  }
+}
+.number-en {
+  font-family: poppins;
+  font-size: 1.5625rem;
+  color: #f11f8d;
+  font-weight: 900;
+  font-style: italic;
+}
+@media (min-width: 768px) {
+  .number-en {
+    font-size: 3.375rem;
+  }
+}
+.number-one {
+  font-family: poppins;
+  font-size: 2.25rem;
+  color: #f11f8d;
+  font-weight: 900;
+  font-style: italic;
+}
+@media (min-width: 768px) {
+  .number-one {
+    font-size: 4.625rem;
+  }
+}
+.top-title {
+  font-size: 1.5625rem;
+  font-weight: 900;
+  color: #005bac;
+  line-height: 1.4;
+}
+
+@media (min-width: 768px) {
+  .top-title {
+    font-size: 3.75rem;
+  }
+}
+.top-title-text {
+  font-size: 0.875rem;
+}
+@media (min-width: 768px) {
+  .top-title-text {
+    font-size: 2.0625rem;
+  }
+}
+.number {
+  line-height: 1;
+}
+
+/* 3色ボタン */
+.button-green {
+  width: 15.625rem;
+  padding: 0.8rem 1rem 0.725rem;
+  background-color: #77cb33;
+  color: #fff;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .button-green {
+    width: 12.5rem;
+    padding: 0.8rem 1rem 0.725rem;
+    margin: 0;
+  }
+}
+@media (min-width: 824px) {
+  .button-green {
+    width: 21.25rem;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+}
+
+.button-yellow {
+  width: 15.625rem;
+  padding: 0.8rem 1rem 0.725rem;
+  background-color: #f6aa00;
+  color: #fff;
+  margin: 0 auto;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .button-yellow{
+    width: 200px;
+    padding: 0.8rem 1rem 0.725rem;
+    margin: 0;
+  }
+}
+@media (min-width: 824px) {
+  .button-yellow {
+    padding-top: 1rem;
+    width: 21.25rem;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+}
+.button-aqua {
+  width: 15.625rem;
+  padding: 0.8rem 1rem 0.725rem;
+  background-color: #3ac8ad;
+  color: #fff;
+  margin: 0 auto;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .button-aqua {
+    width: 12.5rem;
+    padding: 0.8rem 1rem 0.725rem;
+    margin: 0;
+  }
+}
+@media (min-width: 824px) {
+  .button-aqua {
+    width: 21.25rem;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+}
+
+.three-btn {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.4375rem;
+  text-align: center;
+  margin-top: 1.375rem;
+  margin-bottom: 0.9375rem;
+}
+@media (min-width: 768px) {
+  .three-btn {
+    flex-direction: row;
+    column-gap: 2.5rem;
+    margin-top: -2.3125rem;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+}
+/* 選ばれる３つの理由 */
+.point .container {
+  padding: 0rem 1rem 0rem;
+}
+@media (min-width: 768px) {
+  .point .container {
+    max-width: 75rem;
+    margin-bottom: 9.375rem;
+  }
+}
+@media (min-width: 768px) {
+  .point-item-img{
+    width: calc((100% - 2.5rem) / 2);}
+  }
+.section-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.3125rem;
+}
+@media (min-width: 768px) {
+  .section-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4.375rem;
+  }
+}
+.section-title-text {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .section-title-text {
+    font-size: 2.25rem;
+  }
+}
+.section-title-number {
+  font-size: 2.5rem;
+  font-family: poppins;
+  color: #f11fbd;
+  font-weight: bold;
+  padding-bottom: 0.3125rem;
+}
+@media (min-width: 768px) {
+  .section-title-number {
+    font-size: 3.375rem;
+  }
+}
+.point-en {
+  font-size: 1.5rem;
+  font-family: poppins;
+  color: #f11fbd;
+  font-weight: bold;
+  font-style: italic;
+}
+.point-number {
+  font-size: 2.25rem;
+  font-family: poppins;
+  color: #f11fbd;
+  font-weight: bold;
+  font-style: italic;
+}
+.point-item {
+  row-gap: 2.25rem;
+}
+@media (min-width: 768px) {
+  .point-item {
+    display: flex;
+    justify-content: center;
+    column-gap: 40px;
+    margin-bottom: 50px;
+  }
+}
+@media (min-width: 768px) {
+  .point-item-reverse {
+    flex-direction: row-reverse;
+  }
+}
+.point-item-body {
+  display: flex;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3125rem;
+  letter-spacing: 0.02em;
+}
+@media (min-width: 768px) {
+  .point-item-body {
+    letter-spacing: 0.08em;
+  }
+}
+.point-en {
+  font-size: 1.5rem;
+  font-family: poppins;
+  color: #f11fbd;
+  font-weight: bold;
+  font-style: italic;
+}
+@media (min-width: 768px) {
+  .point-en {
+    font-size: 1.75rem;
+  }
+}
+.point-number {
+  font-size: 2.25rem;
+  font-family: poppins;
+  color: #f11fbd;
+  font-weight: bold;
+  font-style: italic;
+  padding-left: 0.3125rem;
+}
+@media (min-width: 768px) {
+  .point-number {
+    font-size: 2.625rem;
+  }
+}
+.point-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: -0.625rem;
+  margin-bottom: 0.3125rem;
+}
+@media (min-width: 768px) {
+  .point-title {
+    font-size: 1.5rem;
+  }
+}
+.point-item-text {
+  margin-bottom: 2.25rem;
+}
+@media (min-width: 48rem) {
+  .point-item-text {
+    margin-bottom: 0rem;
+    margin-top: 1.25rem;
+  }
+}
+.point-item-reverse .point-title {
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .point-item-list {
+    width: calc((100% - 2.5rem) / 2);}
+  }
+
+
+/* 問い合わせ */
+.contact {
+  background-color: rgba(255, 85, 85, 0.1);
+  margin-top: 2.25rem;
+}
+@media (min-width: 768px) {
+  .contact {
+    margin-top: 5.625rem;
+    padding-bottom: 1.25rem;
+  }
+}
+
+.contact .container {
+  padding: 2.4375rem 1rem 2.5rem 1rem;
+}
+
+.contact .button-blue {
+  background: linear-gradient(90deg, #0271e0, #53a2f0);
+  color: #fff;
+  padding: 0.9375rem 0rem 1.0625rem 0rem;
+  text-align: center;
+  max-width: 19.0625rem;
+  font-size: 1.25rem;
+  margin-top: 0.625rem;
+}
+
+@media (min-width: 768px) {
+  .contact .button-blue {
+    padding: 0.9375rem 0rem 1.0625rem 1.25rem;
+    max-width: 22.5rem;
+    font-size: 1.5rem;
+    margin-top: 0.625rem;
+  }
+}
+
+.contact-bottom-text {
+  text-align: center;
+  padding-left: 1.5625rem;
+  padding-right: 1.5625rem;
+}
+@media (min-width: 768px) {
+  .contact-bottom-text {
+    padding-top: 0.75rem;
+    margin-bottom: 1.375rem;
+  }
+}
+
+/* コース・目的 */
+.course {
+  margin-bottom: 3.4375rem;
+}
+
+@media (min-width: 48rem) {
+  .course {
+    margin-bottom: 6rem;
+  }
+}
+.course .container {
+  padding-bottom: 2.375rem;
+  border-radius: 1.25rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (min-width: 768px) {
+  .course .container {
+    padding-bottom: 0rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.course .section-title {
+  font-size: 1.75rem;
+  padding-left: 0.9375rem;
+  padding-top: 0.625rem;
+  margin-bottom: 0.9375rem;
+}
+@media (min-width: 768px) {
+  .course .section-title {
+    font-size: 2.25rem;
+    padding-right: 0.9375rem;
+    margin-top: 0;
+  }
+}
+/* タブ */
+.st-theme-basic {
+  border: none;
+}
+/* タブナビゲーション */
+.tab.st > .nav {
+  column-gap: 0.9375rem;
+  flex-direction: row !important;
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+}
+@media (min-width: 768px) {
+  .tab.st > .nav {
+    padding-left: 0rem;
+    padding-right: 0rem;
+  }
+}
+.tab.st-theme-basic > .nav .nav-link {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  background-color: #f0f0f0;
+  color: #333;
+  border-radius: 0.937rem 0.937rem 0 0;
+}
+@media (min-width: 768px) {
+  .tab.st-theme-basic > .nav .nav-link {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    font-size: 1.5rem;
+    padding-right: 1.875rem;
+    margin-top: 0.625rem;
+  }
+}
+/* アクティブ状態 */
+.tab.st-theme-basic > .nav .nav-link.active {
+  color: #333 !important;
+  background-color: #f2f9ff;
+}
+.tab.st-theme-basic > .nav .nav-link.active::after {
+  background-color: unset !important;
+}
+/* タブコンテンツ */
+.tab-content {
+  text-align: center;
+  background-color: #f2f9ff;
+  border-radius: 0 0 0.3125rem 0.3125rem;
+}
+
+.tab.st-theme-basic > .tab-content > .tab-pane {
+  padding: 1.375rem 0rem 0rem 0rem;
+}
+
+@media (min-width: 768px) {
+  .tab.st-theme-basic > .tab-content > .tab-pane {
+    padding: 1.5625rem 1.875rem 0rem 1.875rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 2.5rem;
+    row-gap: 1.875rem;
+  }
+}
+.course-tab-content-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.course-list-icon {
+  display: flex;
+  align-items: center;
+  font-size: 0.9375rem;
+  padding-right: 0.625rem;
+  background-color: #f2f9ff;
+  padding-bottom: 17px;
+}
+@media (min-width: 768px) {
+  .course-list-icon {
+    padding-right: 0.9375rem;
+    padding-top: 0.9375rem;
+    padding-bottom: 0.4375rem;
+  }
+}
+.course-list-icon i {
+  padding-top: 1.25rem;
+  padding-left: 0.9375rem;
+}
+
+@media (min-width: 48rem) {
+  .course-list-icon i {
+    padding-top: 0.625rem;
+    padding: 0;
+    padding-right: 0.625rem;
+  }
+}
+@media (min-width: 768px) {
+  .course-tab-content-item {
+    display: flex;
+    flex-direction: column;
+    width: calc((100% - 2.5rem) / 2);
+  }
+}
+/* 料金プラン
+------------------------------------------ */
+.plan {
+  margin-top: 4.0625rem;
+  margin-bottom: 3.75rem;
+}
+@media (min-width: 768px) {
+  .plan {
+    margin-top: -0.625rem;
+    margin-right: 0.9375rem;
+    margin-bottom:-20px;
+  }
+}
+.plan .section-title {
+  font-size: 1.75rem;
+  padding-left: 0.9375rem;
+  margin-top: -0.25rem;
+}
+@media (min-width: 768px) {
+  .plan .section-title {
+    font-size: 2.25rem;
+    margin-bottom: 1.875rem;
+    padding-top:0.1875rem ;
+    margin-top: 4.375rem;
+  }
+}
+.plan .container {
+  margin: 0 auto;
+  padding: 0rem 1rem 0rem 1rem;
+  margin-bottom: 0rem;
+}
+table {
+  width: 100%;
+  border: 0.125rem solid #ddd;
+  margin-top: 0.9375rem;
+  border-spacing: 0;
+}
+@media (min-width: 768px) {
+  table {
+    max-width: 37.125rem;
+    margin: 0 auto;
+  }
+}
+th {
+  padding-top: 1.25rem;
+  padding-bottom: 1.0625rem;
+  background-color: #f5f5f5;
+}
+@media (min-width: 768px) {
+  th{font-size: 1.125rem;}
+  }
+
+td {
+  border: 0.0625rem solid #ddd;
+}
+.plan-course {
+  padding-top: 1rem;
+  padding-bottom: 1.125rem;
+  width: 7.1875rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .plan-course {
+    font-size: 1.125rem;
+    width: 9rem;
+    padding-top: 1.6875rem;
+    padding-left: 0.25rem;
+  }
+}
+.price {
+  font-family: poppins;
+  font-size: 1.75rem;
+  color: #f23397;
+  font-weight: bold;
+}
+@media (min-width: 768px) {
+  .price {
+    font-size: 2rem;  
+  }
+}
+.en {
+  color: #f23397;
+}
+.plan-course-price {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .plan-course-price {
+    padding-left: 0.625rem;
+    padding-bottom: 0.3125rem;
+    padding-top: 0.375rem;
+  }
+}
+thead th:last-child {
+  padding-left: 1.25rem;
+}
+.img-picture img {
+  vertical-align: bottom;
+}
+
+.img-picture {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .img-picture {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.footer-copyright {
+  font-size: 0.8125rem;
+  font-family: poppins;
+}
+footer {
+  text-align: center;
+  margin-top: 2.8125rem;
+  padding-left: 0.9375rem;
+}
+@media (min-width: 768px) {
+  footer {
+    margin-top: 2.5rem;
+    padding-left: 0.0625rem;
+  }
+}
